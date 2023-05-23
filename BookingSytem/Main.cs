@@ -44,7 +44,7 @@ namespace BookingSytem
 
         private void Main_Load(object sender, EventArgs e)
         {
-           // DataView.DataSource = Handler.AllBookings();
+           DataView.DataSource = Handler.AllBookings();
         }
 
         private void button3_Click(object sender, EventArgs e)
