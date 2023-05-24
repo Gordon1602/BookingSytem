@@ -20,8 +20,6 @@ namespace BookingSytem
     
     public partial class Main : Form
     {
-        SqlConnection Dbcon = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
-       
         datahandler Handler;
         public Main()
         {

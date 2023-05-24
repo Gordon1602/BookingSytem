@@ -20,7 +20,6 @@ namespace BookingSytem
     {
 
         SqlCommand cmd;
-        SqlConnection Dbcon = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
         int ID = 0;
         datahandler Handler;
         public Client_Edit()
@@ -54,10 +53,13 @@ namespace BookingSytem
 
         private void Submite_Click(object sender, EventArgs e)
         {
+            SQL_Conntios Dbcon = new SQL_Conntios();
+            Dbcon.Conntion();
+
             if (Client_id.Text != "")
             {
-                cmd = new SqlCommand("update Client_table set Client_Name=@Client_Name,Client_Surename=@Client_Surename,Client_PhoneNumde=@Client_PhoneNumde where Client_Id=@id", Dbcon);
-                Dbcon.Open();
+                cmd = new SqlCommand("update Client_table set Client_Name=@Client_Name,Client_Surename=@Client_Surename,Client_PhoneNumde=@Client_PhoneNumde where Client_Id=@id", Dbcon.con);
+                Dbcon.con.Open();
                 cmd.Parameters.AddWithValue("@id", Client_id.Text);
                 cmd.Parameters.AddWithValue("@Client_Name", CName.Text);
                 cmd.Parameters.AddWithValue("@Client_SureName", CSurename.Text);
@@ -66,7 +68,7 @@ namespace BookingSytem
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Dbcon.Close();
+                Dbcon.con.Close();
                 dataGridView1.DataSource = Handler.Clientscearh();
 
             }

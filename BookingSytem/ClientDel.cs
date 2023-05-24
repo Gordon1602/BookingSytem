@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
-using System.Net;
-using System.Xml.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace BookingSytem
@@ -19,8 +9,7 @@ namespace BookingSytem
     public partial class ClientDel : Form
     {
 
-        SqlConnection Dbcon = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
-
+        
         datahandler Handler;
         public ClientDel()
         {
@@ -35,6 +24,9 @@ namespace BookingSytem
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            SQL_Conntios Dbcon = new SQL_Conntios();
+            Dbcon.Conntion();
             if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please Select A field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -43,9 +35,9 @@ namespace BookingSytem
             {
                 string sql = "DELETE FROM Client_table WHERE Client_Id = @Client_Id";
 
-                using (SqlCommand deleteRecord = new SqlCommand(sql, Dbcon))
+                using (SqlCommand deleteRecord = new SqlCommand(sql, Dbcon.con))
                 {
-                    Dbcon.Open();
+                    Dbcon.con.Open();
 
                     int selectedIndex = dataGridView1.SelectedRows[0].Index;
 
@@ -55,7 +47,7 @@ namespace BookingSytem
                     deleteRecord.ExecuteNonQuery();
 
                     dataGridView1.Rows.RemoveAt(selectedIndex);
-                    Dbcon.Close();
+                    Dbcon.con.Close();
                 }
             }
         }

@@ -162,7 +162,7 @@ namespace BookingSytem
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BookingSytem.Properties.Resources._21png;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 50);
             this.pictureBox1.TabIndex = 9;

@@ -20,7 +20,7 @@ namespace BookingSytem
     {
         SqlCommand cmd;
      
-        SqlConnection Dbcon = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
+        
         int ID = 0;
         datahandler Handler;
         public Booking_Edit()
@@ -59,10 +59,15 @@ namespace BookingSytem
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+            SQL_Conntios Dbcon = new SQL_Conntios();
+            Dbcon.Conntion();
+
             if (Booking_Id.Text != "" )
             {
-                cmd = new SqlCommand("update Booking_Tabel set Client_Name=@Client_Name,Vehicle_Make=@Vehicle_Make,Booking_Date=@Booking_Date,Booking_Time=@Booking_Time,Booking_Notes=@Booking_Notes  where Booking_Id=@id", Dbcon);
-                Dbcon.Open();
+                cmd = new SqlCommand("update Booking_Tabel set Client_Name=@Client_Name,Vehicle_Make=@Vehicle_Make,Booking_Date=@Booking_Date,Booking_Time=@Booking_Time,Booking_Notes=@Booking_Notes  where Booking_Id=@id", Dbcon.con);
+                Dbcon.con.Open();
                 cmd.Parameters.AddWithValue("@id", Booking_Id.Text);
                 cmd.Parameters.AddWithValue("@Client_Name", Client_name.Text);
                 cmd.Parameters.AddWithValue("@Vehicle_Make", Client_veh.Text);
@@ -74,7 +79,7 @@ namespace BookingSytem
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
        
-                Dbcon.Close();
+                Dbcon.con.Close();
                 dataGridView1.DataSource = Handler.AllBookings();
 
             }

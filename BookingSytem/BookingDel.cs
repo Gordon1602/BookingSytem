@@ -18,8 +18,6 @@ namespace BookingSytem
     public partial class BookingDel : Form
     {
 
-        SqlConnection Dbcon = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
-
         datahandler Handler;
      
         public BookingDel()
@@ -35,6 +33,10 @@ namespace BookingSytem
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+
+            SQL_Conntios Dbcon = new SQL_Conntios();
+            Dbcon.Conntion();
+           
             if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please Select A field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -43,9 +45,9 @@ namespace BookingSytem
             {
                 string sql = "DELETE FROM Booking_Tabel WHERE Booking_Id = @Booking_Id";
 
-                using (SqlCommand deleteRecord = new SqlCommand(sql, Dbcon))
+                using (SqlCommand deleteRecord = new SqlCommand(sql, Dbcon.con))
                 {
-                    Dbcon.Open();
+                    Dbcon.con.Open();
 
                     int selectedIndex = dataGridView1.SelectedRows[0].Index;
 
@@ -55,7 +57,7 @@ namespace BookingSytem
                     deleteRecord.ExecuteNonQuery();
 
                     dataGridView1.Rows.RemoveAt(selectedIndex);
-                    Dbcon.Close();
+                    Dbcon.con.Close();
                 }
             }
         }

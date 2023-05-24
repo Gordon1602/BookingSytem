@@ -18,9 +18,7 @@ namespace BookingSytem
 {
     public partial class Vehicle_Edit : Form
     {
-
         SqlCommand cmd;
-        SqlConnection Dbcon = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
         int ID = 0;
         datahandler Handler;
 
@@ -37,10 +35,12 @@ namespace BookingSytem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SQL_Conntios Dbcon = new SQL_Conntios();
+            Dbcon.Conntion();
             if (CarID.Text != "")
             {
-                cmd = new SqlCommand("update Client_Vehicle set Vehicle_Model=@Vehicle_Model ,Vehicle_Make=@Vehicle_Make,Vehicle_Registration=@Vehicle_Registration where Vehicle_Id=@id", Dbcon);
-                Dbcon.Open();
+                cmd = new SqlCommand("update Client_Vehicle set Vehicle_Model=@Vehicle_Model ,Vehicle_Make=@Vehicle_Make,Vehicle_Registration=@Vehicle_Registration where Vehicle_Id=@id", Dbcon.con);
+                Dbcon.con.Open();
                 cmd.Parameters.AddWithValue("@id", CarID.Text);
                 cmd.Parameters.AddWithValue("@Vehicle_Model", CarModel.Text);
                 cmd.Parameters.AddWithValue("@Vehicle_Make", CarModel.Text);
@@ -49,7 +49,7 @@ namespace BookingSytem
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Dbcon.Close();
+                Dbcon.con.Close();
                 dataGridView1.DataSource = Handler.Vehscearh();
 
             }

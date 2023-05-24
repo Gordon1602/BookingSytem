@@ -18,17 +18,16 @@ namespace BookingSytem
 {
     internal class datahandler
     {
-        string DBconn = "Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True";
-
-
+       
         public void Client_Reg(string Client_Name, string Client_Surename, int Client_PhoneNumde, string Client_CarModel, string Client_CarMake, string Client_Reg)
         {
-            SqlConnection DBconnection = new SqlConnection(DBconn);
-            DBconnection.Open();
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
             string Cadd = "insert into Client_table(Client_Name,Client_Surename,Client_PhoneNumde) values('" + Client_Name + "','" + Client_Surename + "','" + Client_PhoneNumde + "')";
             string Vadd = "insert into Client_Vehicle(Vehicle_Model,Vehicle_Make,Vehicle_Registration) values('" + Client_CarModel + "','" + Client_CarMake + "','" + Client_Reg + "')";
-            SqlCommand com = new SqlCommand(Vadd, DBconnection);
-            SqlCommand com1 = new SqlCommand(Cadd, DBconnection);
+            SqlCommand com = new SqlCommand(Vadd, SQl.con);
+            SqlCommand com1 = new SqlCommand(Cadd, SQl.con);
             try
             {
                 com.ExecuteNonQuery();
@@ -41,17 +40,16 @@ namespace BookingSytem
             }
             finally
             {
-                DBconnection.Close();
+                SQl.con.Close();
             }
         }
 
         public BindingSource AllBookings()
         {
-            SqlConnection DBconnection = new SqlConnection(DBconn);
-
-
-            DBconnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Booking_Tabel", DBconnection);
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Booking_Tabel", SQl.con);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -60,21 +58,23 @@ namespace BookingSytem
             BS.DataSource = reader;
 
 
-            DBconnection.Close();
+            SQl.con.Close();
 
             return BS;
         }
 
         public BindingSource joinedDataTable()
         {
-            using (SqlConnection connection = new SqlConnection(DBconn))
-            {
 
-                string query = "SELECT * FROM Client_table INNER JOIN Client_Vehicle ON Client_table.Client_Id = Client_Vehicle.Vehicle_Id";
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
+
+            string query = "SELECT * FROM Client_table INNER JOIN Client_Vehicle ON Client_table.Client_Id = Client_Vehicle.Vehicle_Id";
 
                 DataTable dataTable = new DataTable();
              
-                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, SQl.con))
                 {
                     adapter.Fill(dataTable);
                 }
@@ -85,17 +85,18 @@ namespace BookingSytem
 
                 return joinedDataTable1;
 
-            }
+            
         }
 
         public void Add_Booking(string Client_Name,string Vehicle_Make, string Booking_Date, string Booking_Time, string Booking_Notes)
         {
-            SqlConnection DBconnection = new SqlConnection(DBconn);
-            DBconnection.Open();
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
             string Cadd = "insert into Booking_Tabel(Client_Name,Vehicle_Make,Booking_Date,Booking_Time,Booking_Notes) values('" + Client_Name + "','"+ Vehicle_Make + "','" + Booking_Date + "','" + Booking_Time + "','" + Booking_Notes + "')";
            
             
-            SqlCommand com = new SqlCommand(Cadd, DBconnection);
+            SqlCommand com = new SqlCommand(Cadd, SQl.con);
             try
             {
                 com.ExecuteNonQuery();
@@ -108,19 +109,18 @@ namespace BookingSytem
             }
             finally
             {
-                DBconnection.Close();
+                SQl.con.Close();
             }
         }
 
 
         public BindingSource Clientscearh()
         {
-            SqlConnection DBconnection = new SqlConnection(DBconn);
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
 
-
-            DBconnection.Open();
-           
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Client_table", DBconnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Client_table", SQl.con);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -129,17 +129,16 @@ namespace BookingSytem
             Binding.DataSource = reader;
 
 
-            DBconnection.Close();
+            SQl.con.Close();
 
             return Binding;
         }
         public BindingSource Vehscearh()
         {
-            SqlConnection DBconnection = new SqlConnection(DBconn);
-
-
-            DBconnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Client_Vehicle ", DBconnection);
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Client_Vehicle ", SQl.con);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -148,7 +147,7 @@ namespace BookingSytem
             Binding.DataSource = reader;
 
 
-            DBconnection.Close();
+            SQl.con.Close();
 
             return Binding;
         }
