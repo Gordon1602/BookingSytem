@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookingSytem
 {
-    public partial class editingform : Form
+    public partial class EditingSelect : Form
     {
-        public editingform()
+        public EditingSelect()
         {
             InitializeComponent();
         }

@@ -52,6 +52,12 @@
     <Compile Include="Booking Edit.Designer.cs">
       <DependentUpon>Booking Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookingDel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingDel.Designer.cs">
+      <DependentUpon>BookingDel.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,12 +76,24 @@
     <Compile Include="Client Reg.Designer.cs">
       <DependentUpon>Client Reg.cs</DependentUpon>
     </Compile>
-    <Compile Include="datahandler.cs" />
-    <Compile Include="editingform.cs">
+    <Compile Include="ClientDel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="editingform.Designer.cs">
-      <DependentUpon>editingform.cs</DependentUpon>
+    <Compile Include="ClientDel.Designer.cs">
+      <DependentUpon>ClientDel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="datahandler.cs" />
+    <Compile Include="DeletingSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletingSelection.Designer.cs">
+      <DependentUpon>DeletingSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditingSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditingSelect.Designer.cs">
+      <DependentUpon>EditingSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -96,8 +114,17 @@
     <Compile Include="Vehicle Edit.Designer.cs">
       <DependentUpon>Vehicle Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="VehicleDel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleDel.Designer.cs">
+      <DependentUpon>VehicleDel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Booking Edit.resx">
       <DependentUpon>Booking Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingDel.resx">
+      <DependentUpon>BookingDel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookingForm.resx">
       <DependentUpon>BookingForm.cs</DependentUpon>
@@ -108,8 +135,14 @@
     <EmbeddedResource Include="Client Reg.resx">
       <DependentUpon>Client Reg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editingform.resx">
-      <DependentUpon>editingform.cs</DependentUpon>
+    <EmbeddedResource Include="ClientDel.resx">
+      <DependentUpon>ClientDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletingSelection.resx">
+      <DependentUpon>DeletingSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditingSelect.resx">
+      <DependentUpon>EditingSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

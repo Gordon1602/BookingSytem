@@ -113,13 +113,14 @@ namespace BookingSytem
         }
 
 
-        public BindingSource Clientscearh(int Client_Id)
+        public BindingSource Clientscearh()
         {
             SqlConnection DBconnection = new SqlConnection(DBconn);
 
 
             DBconnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Client_table WHERE Client_Id ='" + Client_Id + "'", DBconnection);
+           
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Client_table", DBconnection);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -132,13 +133,13 @@ namespace BookingSytem
 
             return Binding;
         }
-        public BindingSource Vehscearh(int Vehicle_Id)
+        public BindingSource Vehscearh()
         {
             SqlConnection DBconnection = new SqlConnection(DBconn);
 
 
             DBconnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Client_Vehicle WHERE Vehicle_Id ='" + Vehicle_Id + "'", DBconnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Client_Vehicle ", DBconnection);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -151,29 +152,6 @@ namespace BookingSytem
 
             return Binding;
         }
-
-        public BindingSource Bookingscearh(int Booking_Id)
-        {
-            SqlConnection DBconnection = new SqlConnection(DBconn);
-
-
-            DBconnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Booking_Tabel WHERE Booking_Id ='" + Booking_Id + "'", DBconnection);
-
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            BindingSource Binding = new BindingSource();
-
-            Binding.DataSource = reader;
-
-
-            DBconnection.Close();
-
-            return Binding;
-        }
-
-        
-
 
     }
 }

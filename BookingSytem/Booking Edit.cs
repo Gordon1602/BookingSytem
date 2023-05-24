@@ -19,7 +19,7 @@ namespace BookingSytem
     public partial class Booking_Edit : Form
     {
         SqlCommand cmd;
-        SqlDataAdapter adapt;
+     
         SqlConnection Dbcon = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
         int ID = 0;
         datahandler Handler;
@@ -51,7 +51,7 @@ namespace BookingSytem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            editingform editingform = new editingform();
+            EditingSelect editingform = new EditingSelect();
             editingform.Show();
             this.Hide();
 
@@ -72,14 +72,15 @@ namespace BookingSytem
 
               
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Record Updated Successfully");
+                MessageBox.Show("Record Updated Successfully", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+       
                 Dbcon.Close();
                 dataGridView1.DataSource = Handler.AllBookings();
 
             }
             else
             {
-                MessageBox.Show("Please Select Record to Update");
+                MessageBox.Show("Please Select Record to Update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

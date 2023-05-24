@@ -49,30 +49,9 @@ namespace BookingSytem
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            if (DataView.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please Select A field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                string sql = "DELETE FROM Booking_Tabel WHERE Booking_Id = @Booking_Id";
-
-                using (SqlCommand deleteRecord = new SqlCommand(sql, Dbcon))
-                {
-                    Dbcon.Open();
-
-                    int selectedIndex = DataView.SelectedRows[0].Index;
-
-                    int Client_Id = Convert.ToInt32(DataView[0, selectedIndex].Value);
-
-                    deleteRecord.Parameters.Add("@Booking_Id", SqlDbType.Int).Value = Client_Id;
-                    deleteRecord.ExecuteNonQuery();
-
-                    DataView.Rows.RemoveAt(selectedIndex);
-                    Dbcon.Close();
-                }
-            }
+            DeletingSelection deletingSelection = new DeletingSelection();
+            deletingSelection.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,7 +74,7 @@ namespace BookingSytem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            editingform editingform = new editingform();
+            EditingSelect editingform = new EditingSelect();
             editingform.Show();
             this.Hide();
         }
