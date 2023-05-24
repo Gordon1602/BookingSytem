@@ -25,7 +25,7 @@ namespace BookingSytem
         {
      
 
-             DBconn = "Server = 192.168.1.252\\GORDONDEMO,30120; Initial Catalog = MBooking; Integrated Security = True; User Id=Gordon-Pc; Password=DancingMonkey";
+             DBconn = "Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True";
              con = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
         }
 
