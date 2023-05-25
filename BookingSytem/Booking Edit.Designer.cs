@@ -44,6 +44,7 @@ namespace BookingSytem
             this.Booking_note = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Booking_time = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +93,7 @@ namespace BookingSytem
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 21;
-            this.button1.Text = "Submited";
+            this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -189,12 +190,22 @@ namespace BookingSytem
             this.Booking_time.Size = new System.Drawing.Size(119, 20);
             this.Booking_time.TabIndex = 30;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(151, 13);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Please Selcet Booking To Edit";
+            // 
             // Booking_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(671, 232);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.Booking_time);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Booking_note);
@@ -236,5 +247,6 @@ namespace BookingSytem
         private System.Windows.Forms.TextBox Booking_note;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Booking_time;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -91,9 +91,9 @@ namespace BookingSytem
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 22);
+            this.label1.Size = new System.Drawing.Size(319, 22);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Client Editing ";
+            this.label1.Text = "Please Selcet A Client To  Editing ";
             // 
             // Client_id
             // 
@@ -124,7 +124,7 @@ namespace BookingSytem
             this.Submite.Name = "Submite";
             this.Submite.Size = new System.Drawing.Size(103, 23);
             this.Submite.TabIndex = 52;
-            this.Submite.Text = "Submited";
+            this.Submite.Text = "Submit";
             this.Submite.UseVisualStyleBackColor = false;
             this.Submite.Click += new System.EventHandler(this.Submite_Click);
             // 

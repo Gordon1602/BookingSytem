@@ -50,9 +50,9 @@ namespace BookingSytem
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 22);
+            this.label1.Size = new System.Drawing.Size(320, 22);
             this.label1.TabIndex = 44;
-            this.label1.Text = "Vehicle Editing ";
+            this.label1.Text = "Please Selcet a Vehicle to Editing ";
             // 
             // button2
             // 
@@ -76,7 +76,7 @@ namespace BookingSytem
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 23);
             this.button1.TabIndex = 42;
-            this.button1.Text = "Submited";
+            this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -136,7 +136,6 @@ namespace BookingSytem
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 45;
             this.label2.Text = "Car Id";
-        
             // 
             // CarReg
             // 
