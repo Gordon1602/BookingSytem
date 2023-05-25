@@ -15,12 +15,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 
+
 namespace BookingSytem
 {
     
     public partial class Main : Form
     {
         datahandler Handler;
+        DataTable datatable;
+        SqlDataAdapter sqladapter;
         public Main()
         {
             InitializeComponent();
@@ -42,7 +45,19 @@ namespace BookingSytem
 
         private void Main_Load(object sender, EventArgs e)
         {
-           DataView.DataSource = Handler.AllBookings();
+          DataView.DataSource = Handler.AllBookings();
+            timer1.Start();
+
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
+            string Query = "select * from Booking_Tabel";
+
+            SqlCommand com = new SqlCommand(Query, SQl.con);
+            sqladapter = new SqlDataAdapter();
+            datatable = new DataTable();
+            sqladapter.SelectCommand = com;
+            sqladapter.Fill(datatable);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -75,6 +90,26 @@ namespace BookingSytem
             EditingSelect editingform = new EditingSelect();
             editingform.Show();
             this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Sreach sreach = new Sreach();
+            sreach.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string TodayDate = DateTime.Now.ToString("dd/MM/yyyy");
+            DataView DV = new DataView(datatable);
+            DV.RowFilter = string.Format("Booking_Date LIKE '%{0}%'", TodayDate);
+            DataView.DataSource = DV;
+        }
+   
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {        
+            label2.Text = DateTime.Now.ToString("dddd dd MMMM yyyy HH:mm");
         }
     }
 }

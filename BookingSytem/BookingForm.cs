@@ -18,21 +18,21 @@ namespace BookingSytem
     public partial class BookingForm : Form
     {
         datahandler Handler;
-        SqlConnection Dbcon = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
+        
         public BookingForm()
         {
             InitializeComponent();
             Handler = new datahandler();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
         private void BookingForm_Load(object sender, EventArgs e)
         {
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
+
             string sql = @"SELECT Client_Name,Client_Surename FROM Client_table";
-            SqlDataAdapter sda = new SqlDataAdapter(sql, Dbcon);
+            SqlDataAdapter sda = new SqlDataAdapter(sql, SQl.con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
         
@@ -41,23 +41,12 @@ namespace BookingSytem
 
 
             string sql1 = @"SELECT Vehicle_Make FROM Client_Vehicle";
-            SqlDataAdapter sda1 = new SqlDataAdapter(sql1, Dbcon);
+            SqlDataAdapter sda1 = new SqlDataAdapter(sql1, SQl.con);
             DataTable dt1 = new DataTable();
             sda1.Fill(dt1);
 
             this.comboBox2.DataSource = dt1;
             comboBox2.DisplayMember = "Vehicle_Make";
-
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -76,11 +65,6 @@ namespace BookingSytem
             Main main = new Main();
             main.Show();
             this.Hide();
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

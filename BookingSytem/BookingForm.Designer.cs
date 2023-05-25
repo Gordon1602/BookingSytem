@@ -99,7 +99,6 @@ namespace BookingSytem
             this.label2.Size = new System.Drawing.Size(151, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Please Selcet The Date";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -137,7 +136,6 @@ namespace BookingSytem
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(139, 58);
             this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -149,7 +147,7 @@ namespace BookingSytem
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Submited";
+            this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -184,7 +182,6 @@ namespace BookingSytem
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(141, 21);
             this.comboBox2.TabIndex = 12;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // BookingForm
             // 

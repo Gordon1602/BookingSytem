@@ -93,10 +93,8 @@ namespace BookingSytem
             SQL_Conntios SQl = new SQL_Conntios();
             SQl.Conntion();
             SQl.con.Open();
-            string Cadd = "insert into Booking_Tabel(Client_Name,Vehicle_Make,Booking_Date,Booking_Time,Booking_Notes) values('" + Client_Name + "','"+ Vehicle_Make + "','" + Booking_Date + "','" + Booking_Time + "','" + Booking_Notes + "')";
-           
-            
-            SqlCommand com = new SqlCommand(Cadd, SQl.con);
+            string Cadd = "insert into Booking_Tabel(Client_Name,Vehicle_Make,Booking_Date,Booking_Time,Booking_Notes) values('" + Client_Name + "','"+ Vehicle_Make + "','" + Booking_Date + "','" + Booking_Time + "','" + Booking_Notes + "')";  
+            SqlCommand com = new SqlCommand(Cadd,SQl.con);
             try
             {
                 com.ExecuteNonQuery();

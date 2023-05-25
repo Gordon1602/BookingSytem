@@ -78,7 +78,7 @@ namespace BookingSytem
             // Car_Mobel
             // 
             this.Car_Mobel.AutoSize = true;
-            this.Car_Mobel.Location = new System.Drawing.Point(13, 126);
+            this.Car_Mobel.Location = new System.Drawing.Point(13, 152);
             this.Car_Mobel.Name = "Car_Mobel";
             this.Car_Mobel.Size = new System.Drawing.Size(55, 13);
             this.Car_Mobel.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace BookingSytem
             // Car_Make
             // 
             this.Car_Make.AutoSize = true;
-            this.Car_Make.Location = new System.Drawing.Point(13, 152);
+            this.Car_Make.Location = new System.Drawing.Point(13, 124);
             this.Car_Make.Name = "Car_Make";
             this.Car_Make.Size = new System.Drawing.Size(53, 13);
             this.Car_Make.TabIndex = 4;
@@ -126,14 +126,14 @@ namespace BookingSytem
             // 
             // CarModel
             // 
-            this.CarModel.Location = new System.Drawing.Point(120, 126);
+            this.CarModel.Location = new System.Drawing.Point(120, 152);
             this.CarModel.Name = "CarModel";
             this.CarModel.Size = new System.Drawing.Size(115, 20);
             this.CarModel.TabIndex = 9;
             // 
             // CarMake
             // 
-            this.CarMake.Location = new System.Drawing.Point(120, 152);
+            this.CarMake.Location = new System.Drawing.Point(120, 126);
             this.CarMake.Name = "CarMake";
             this.CarMake.Size = new System.Drawing.Size(115, 20);
             this.CarMake.TabIndex = 10;

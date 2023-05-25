@@ -17,16 +17,11 @@ namespace BookingSytem
 {
     class SQL_Conntios
     {
-
         public SqlConnection con;
-        public string DBconn;
 
         public void Conntion()
         {
-     
-
-             DBconn = "Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True";
-             con = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO; Initial Catalog = MBooking; Integrated Security = True");
+         con = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO,30120; Initial Catalog =MBooking; User ID=MBooking;Password=Inta123@") ;
         }
 
     }
