@@ -1,26 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
-using System.Net;
-using System.Xml.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
 
 namespace BookingSytem
 {
     public partial class Booking_Edit : Form
     {
         SqlCommand cmd;
-     
-        
         int ID = 0;
         datahandler Handler;
         public Booking_Edit()
@@ -33,7 +19,6 @@ namespace BookingSytem
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-
             Booking_Id.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             Client_name.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             Client_veh.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -41,7 +26,6 @@ namespace BookingSytem
             Booking_time.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             Booking_note.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
         
-
         }
 
         private void Booking_Edit_Load(object sender, EventArgs e)
@@ -56,11 +40,8 @@ namespace BookingSytem
             this.Hide();
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-
-
             SQL_Conntios Dbcon = new SQL_Conntios();
             Dbcon.Conntion();
 
@@ -75,13 +56,11 @@ namespace BookingSytem
                 cmd.Parameters.AddWithValue("@Booking_Time", Booking_time.Text);
                 cmd.Parameters.AddWithValue("@Booking_Notes", Booking_note.Text);
 
-              
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
        
                 Dbcon.con.Close();
                 dataGridView1.DataSource = Handler.AllBookings();
-
             }
             else
             {
