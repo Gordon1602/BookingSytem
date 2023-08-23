@@ -39,11 +39,11 @@ namespace BookingSytem
             Dbcon.Conntion();
             if (CarID.Text != "")
             {
-                cmd = new SqlCommand("update Client_Vehicle set Vehicle_Model=@Vehicle_Model ,Vehicle_Make=@Vehicle_Make,Vehicle_Registration=@Vehicle_Registration where Vehicle_Id=@id", Dbcon.con);
+                cmd = new SqlCommand("update Client_Vehicle set Vehicle_Model=@Vehicle_Model ,Vehicle_Make=@Vehicle_Make,Vehicle_Registration=@Vehicle_Registration where Client_Vehicle_Id=@id", Dbcon.con);
                 Dbcon.con.Open();
                 cmd.Parameters.AddWithValue("@id", CarID.Text);
                 cmd.Parameters.AddWithValue("@Vehicle_Model", CarModel.Text);
-                cmd.Parameters.AddWithValue("@Vehicle_Make", CarModel.Text);
+                cmd.Parameters.AddWithValue("@Vehicle_Make", Carmake.Text);
                 cmd.Parameters.AddWithValue("@Vehicle_Registration", CarReg.Text);
 
 

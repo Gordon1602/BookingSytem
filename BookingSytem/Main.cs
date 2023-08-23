@@ -61,7 +61,18 @@ namespace BookingSytem
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Close();
+            string MessageBoxTitle = "Exiting The System";
+            string MessageBoxContent = "Are You sure you want to Exit Out of the applition";
+
+            DialogResult dialogResult = MessageBox.Show(MessageBoxContent, MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -89,16 +100,26 @@ namespace BookingSytem
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-     
+            Application.Exit();
         }
 
         private void Loadshedding_btn_Click(object sender, EventArgs e)
         {
-            Login Login = new Login();
-            Login.Show();
-            this.Hide();
-        }
+            string MessageBoxTitle = "Logout";
+            string MessageBoxContent = "Are You sure you want to Logout";
 
+            DialogResult dialogResult = MessageBox.Show(MessageBoxContent, MessageBoxTitle, MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Login Login = new Login();
+                Login.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }           
+        }
         private void button9_Click(object sender, EventArgs e)
         {
             SysSelecting Sys = new SysSelecting();
