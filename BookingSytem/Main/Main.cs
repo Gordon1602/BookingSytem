@@ -2,6 +2,15 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Net.Http;
+using System.Net.Http.Formatting;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 
 namespace BookingSytem
 {
@@ -125,6 +134,20 @@ namespace BookingSytem
             SysSelecting Sys = new SysSelecting();
             Sys.Show();
             this.Hide();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://developer.sepush.co.za/business/2.0/");
+            HttpResponseMessage reponse = client.GetAsync("/status").Result;
+
+            var test = reponse.Content.ReadAsAsync<IEnumerable<LoadSheddingstage>>().Result;
+
+            DataView.DataSource = test;
+     
+
+
         }
     }
 }
