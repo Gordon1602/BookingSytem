@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,11 +101,20 @@
     <Compile Include="EditingSelect.Designer.cs">
       <DependentUpon>EditingSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MBookingDataSet.cs">
+      <DependentUpon>MBookingDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="MBookingDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +129,18 @@
     </Compile>
     <Compile Include="Sreach.Designer.cs">
       <DependentUpon>Sreach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysSelecting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysSelecting.Designer.cs">
+      <DependentUpon>SysSelecting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysuserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysuserAdd.Designer.cs">
+      <DependentUpon>SysuserAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Vehicle Edit.cs">
       <SubType>Form</SubType>
@@ -151,6 +178,9 @@
     <EmbeddedResource Include="EditingSelect.resx">
       <DependentUpon>EditingSelect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +196,12 @@
     </Compile>
     <EmbeddedResource Include="Sreach.resx">
       <DependentUpon>Sreach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysSelecting.resx">
+      <DependentUpon>SysSelecting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysuserAdd.resx">
+      <DependentUpon>SysuserAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicle Edit.resx">
       <DependentUpon>Vehicle Edit.cs</DependentUpon>
@@ -184,6 +220,7 @@
     <None Include="MBookingDataSet.xss">
       <DependentUpon>MBookingDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

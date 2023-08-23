@@ -21,7 +21,7 @@ namespace BookingSytem
 
         public void Conntion()
         {
-         con = new SqlConnection("Server = DESKTOP-0GGDTEK\\GORDONDEMO,30120; Initial Catalog =MBooking; User ID=MBooking;Password=Inta123@") ;
+         con = new SqlConnection("Server = VMG-Gordon\\GORDONNEWDB,30120; Initial Catalog=MBooking; User ID=Sa;Password=Pr0perty1WWW") ;
         }
 
     }

@@ -67,5 +67,12 @@ namespace BookingSytem
                 MessageBox.Show("Please Select Record to Update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Booking_Edit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
     }
 }

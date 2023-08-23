@@ -46,14 +46,14 @@ namespace BookingSytem
             // 
             // CSurename
             // 
-            this.CSurename.Location = new System.Drawing.Point(546, 97);
+            this.CSurename.Location = new System.Drawing.Point(353, 205);
             this.CSurename.Name = "CSurename";
             this.CSurename.Size = new System.Drawing.Size(115, 20);
             this.CSurename.TabIndex = 22;
             // 
             // CName
             // 
-            this.CName.Location = new System.Drawing.Point(545, 71);
+            this.CName.Location = new System.Drawing.Point(104, 228);
             this.CName.Name = "CName";
             this.CName.Size = new System.Drawing.Size(115, 20);
             this.CName.TabIndex = 21;
@@ -61,27 +61,30 @@ namespace BookingSytem
             // Client_PH
             // 
             this.Client_PH.AutoSize = true;
-            this.Client_PH.Location = new System.Drawing.Point(444, 123);
+            this.Client_PH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Client_PH.Location = new System.Drawing.Point(228, 210);
             this.Client_PH.Name = "Client_PH";
-            this.Client_PH.Size = new System.Drawing.Size(78, 13);
+            this.Client_PH.Size = new System.Drawing.Size(103, 15);
             this.Client_PH.TabIndex = 17;
             this.Client_PH.Text = "Phone Number";
             // 
             // Client_Surename
             // 
             this.Client_Surename.AutoSize = true;
-            this.Client_Surename.Location = new System.Drawing.Point(444, 97);
+            this.Client_Surename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Client_Surename.Location = new System.Drawing.Point(228, 232);
             this.Client_Surename.Name = "Client_Surename";
-            this.Client_Surename.Size = new System.Drawing.Size(84, 13);
+            this.Client_Surename.Size = new System.Drawing.Size(114, 15);
             this.Client_Surename.TabIndex = 16;
             this.Client_Surename.Text = "Client Surename";
             // 
             // ClientName
             // 
             this.ClientName.AutoSize = true;
-            this.ClientName.Location = new System.Drawing.Point(444, 71);
+            this.ClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientName.Location = new System.Drawing.Point(12, 231);
             this.ClientName.Name = "ClientName";
-            this.ClientName.Size = new System.Drawing.Size(64, 13);
+            this.ClientName.Size = new System.Drawing.Size(86, 15);
             this.ClientName.TabIndex = 15;
             this.ClientName.Text = "Client Name";
             // 
@@ -89,7 +92,7 @@ namespace BookingSytem
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(140, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(319, 22);
             this.label1.TabIndex = 29;
@@ -97,17 +100,18 @@ namespace BookingSytem
             // 
             // Client_id
             // 
-            this.Client_id.Location = new System.Drawing.Point(545, 46);
+            this.Client_id.Location = new System.Drawing.Point(104, 205);
             this.Client_id.Name = "Client_id";
             this.Client_id.Size = new System.Drawing.Size(115, 20);
             this.Client_id.TabIndex = 46;
+            this.Client_id.TextChanged += new System.EventHandler(this.Client_id_TextChanged);
             // 
             // Back
             // 
             this.Back.BackColor = System.Drawing.SystemColors.Control;
             this.Back.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Back.Font = new System.Drawing.Font("Kristen ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Location = new System.Drawing.Point(562, 163);
+            this.Back.Location = new System.Drawing.Point(488, 230);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(103, 23);
             this.Back.TabIndex = 27;
@@ -120,7 +124,7 @@ namespace BookingSytem
             this.Submite.BackColor = System.Drawing.SystemColors.Control;
             this.Submite.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Submite.Font = new System.Drawing.Font("Kristen ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Submite.Location = new System.Drawing.Point(453, 163);
+            this.Submite.Location = new System.Drawing.Point(488, 205);
             this.Submite.Name = "Submite";
             this.Submite.Size = new System.Drawing.Size(103, 23);
             this.Submite.TabIndex = 52;
@@ -130,7 +134,7 @@ namespace BookingSytem
             // 
             // CPH
             // 
-            this.CPH.Location = new System.Drawing.Point(545, 123);
+            this.CPH.Location = new System.Drawing.Point(353, 228);
             this.CPH.Name = "CPH";
             this.CPH.Size = new System.Drawing.Size(115, 20);
             this.CPH.TabIndex = 23;
@@ -138,9 +142,10 @@ namespace BookingSytem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(444, 46);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 210);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(62, 15);
             this.label2.TabIndex = 53;
             this.label2.Text = "Client ID";
             // 
@@ -150,7 +155,7 @@ namespace BookingSytem
             this.dataGridView1.Location = new System.Drawing.Point(16, 34);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(404, 157);
+            this.dataGridView1.Size = new System.Drawing.Size(575, 157);
             this.dataGridView1.TabIndex = 54;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -160,7 +165,7 @@ namespace BookingSytem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(677, 191);
+            this.ClientSize = new System.Drawing.Size(621, 259);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Submite);
@@ -174,7 +179,9 @@ namespace BookingSytem
             this.Controls.Add(this.Client_Surename);
             this.Controls.Add(this.ClientName);
             this.Name = "Client_Edit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client_Edit";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Client_Edit_FormClosed);
             this.Load += new System.EventHandler(this.Client_Edit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -203,7 +203,9 @@ namespace BookingSytem
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "BookingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookingForm_FormClosed);
             this.Load += new System.EventHandler(this.BookingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clienttableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mBookingDataSet)).EndInit();

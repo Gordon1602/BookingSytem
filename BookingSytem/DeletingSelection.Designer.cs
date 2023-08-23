@@ -102,7 +102,9 @@ namespace BookingSytem
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "DeletingSelection";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deleting_Form";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DeletingSelection_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

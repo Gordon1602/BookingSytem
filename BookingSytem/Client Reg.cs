@@ -65,5 +65,12 @@ namespace BookingSytem
         {
 
         }
+
+        private void Client_Reg_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
     }
 }

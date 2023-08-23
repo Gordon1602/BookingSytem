@@ -103,7 +103,9 @@ namespace BookingSytem
             this.Controls.Add(this.button1);
             this.MaximizeBox = false;
             this.Name = "EditingSelect";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editing Form";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditingSelect_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

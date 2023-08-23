@@ -93,7 +93,9 @@ namespace BookingSytem
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "BookingDel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingDel";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookingDel_FormClosed);
             this.Load += new System.EventHandler(this.BookingDel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

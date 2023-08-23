@@ -31,7 +31,7 @@ namespace BookingSytem
             SQl.Conntion();
             SQl.con.Open();
 
-            string query = "SELECT* FROM Client_table WHERE Client_Name = '" + textBox1.Text + "'";
+            string query = "SELECT Client_Name AS Name , Client_Surename AS Surename ,Client_PhoneNumde AS'Phone Number' FROM Client_table WHERE Client_Name LIKE '%" + textBox1.Text.ToLower() + "%'  or  Client_PhoneNumde LIKE '%" + textBox1.Text.ToLower() + "%' or  Client_Surename LIKE '%" + textBox1.Text.ToLower() + "%' ";
             SqlCommand command = new SqlCommand(query, SQl.con);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
@@ -46,12 +46,24 @@ namespace BookingSytem
             SQl.Conntion();
             SQl.con.Open();
 
-            string query = "SELECT* FROM Client_Vehicle WHERE Vehicle_Make = '" + textBox2.Text + "'";
+            string query = "SELECT Vehicle_Make as Make , Vehicle_Model as Mobel , Vehicle_Registration as 'License Number'  FROM Client_Vehicle WHERE Vehicle_Make Like '%" + textBox2.Text.ToLower() + "%'or Vehicle_Model like '%" + textBox2.Text.ToLower() + "%' or Vehicle_Registration like '%" + textBox2.Text.ToLower() + "%' ";
             SqlCommand command = new SqlCommand(query, SQl.con);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
             dataGridView1.DataSource = table;
+        }
+
+        private void Sreach_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sreach_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
         }
     }
 }

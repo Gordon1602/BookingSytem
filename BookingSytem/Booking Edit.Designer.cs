@@ -222,7 +222,9 @@ namespace BookingSytem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Booking_Edit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking_Edit";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Booking_Edit_FormClosed);
             this.Load += new System.EventHandler(this.Booking_Edit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

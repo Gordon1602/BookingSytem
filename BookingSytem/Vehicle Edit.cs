@@ -76,5 +76,17 @@ namespace BookingSytem
             Carmake.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             CarReg.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
+
+        private void Vehicle_Edit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
+
+        private void Carmake_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

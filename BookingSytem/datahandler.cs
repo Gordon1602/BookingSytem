@@ -49,7 +49,7 @@ namespace BookingSytem
             SQL_Conntios SQl = new SQL_Conntios();
             SQl.Conntion();
             SQl.con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Booking_Tabel", SQl.con);
+            SqlCommand cmd = new SqlCommand(" select Booking_Id as 'Id' , Client_Name As 'Name',Vehicle_Make As 'Make',Booking_Date As 'Date',Booking_Time as 'Time',Booking_Notes As 'Notes' from Booking_Tabel", SQl.con);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -70,7 +70,7 @@ namespace BookingSytem
             SQl.Conntion();
             SQl.con.Open();
 
-            string query = "SELECT * FROM Client_table INNER JOIN Client_Vehicle ON Client_table.Client_Id = Client_Vehicle.Vehicle_Id";
+            string query = "Select * from NewClietVehicleView";
 
                 DataTable dataTable = new DataTable();
              
@@ -149,6 +149,51 @@ namespace BookingSytem
 
             return Binding;
         }
+
+        public void Add_SystemUser(string Username, string Password, string Email)
+        {
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
+            string Cadd = "insert into login( Username,Password,Email) values('" + Username + "','" + Password + "','" + Email + "')";
+            SqlCommand com = new SqlCommand(Cadd, SQl.con);
+            try
+            {
+                com.ExecuteNonQuery();
+
+                MessageBox.Show("System User Has been Add", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+            finally
+            {
+                SQl.con.Close();
+            }
+        }
+
+        public BindingSource AllUserSystem()
+        {
+            SQL_Conntios SQl = new SQL_Conntios();
+            SQl.Conntion();
+            SQl.con.Open();
+            SqlCommand cmd = new SqlCommand("Select Login_Id as 'ID', Username ,Password ,Email from login", SQl.con);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            BindingSource BS = new BindingSource();
+
+            BS.DataSource = reader;
+
+
+            SQl.con.Close();
+
+            return BS;
+        }
+
+
+
 
     }
 }

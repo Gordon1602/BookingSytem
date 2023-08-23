@@ -48,7 +48,8 @@ namespace BookingSytem
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(219, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(320, 22);
             this.label1.TabIndex = 44;
@@ -59,9 +60,10 @@ namespace BookingSytem
             this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button2.Font = new System.Drawing.Font("Kristen ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(422, 142);
+            this.button2.Location = new System.Drawing.Point(575, 227);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 23);
+            this.button2.Size = new System.Drawing.Size(149, 27);
             this.button2.TabIndex = 43;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = false;
@@ -72,9 +74,10 @@ namespace BookingSytem
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Kristen ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(541, 142);
+            this.button1.Location = new System.Drawing.Point(575, 198);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 23);
+            this.button1.Size = new System.Drawing.Size(149, 27);
             this.button1.TabIndex = 42;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = false;
@@ -82,85 +85,99 @@ namespace BookingSytem
             // 
             // Carmake
             // 
-            this.Carmake.Location = new System.Drawing.Point(538, 80);
+            this.Carmake.Location = new System.Drawing.Point(391, 197);
+            this.Carmake.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Carmake.Name = "Carmake";
-            this.Carmake.Size = new System.Drawing.Size(115, 20);
+            this.Carmake.Size = new System.Drawing.Size(152, 21);
             this.Carmake.TabIndex = 41;
+            this.Carmake.TextChanged += new System.EventHandler(this.Carmake_TextChanged);
             // 
             // CarModel
             // 
-            this.CarModel.Location = new System.Drawing.Point(538, 54);
+            this.CarModel.Location = new System.Drawing.Point(112, 225);
+            this.CarModel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CarModel.Name = "CarModel";
-            this.CarModel.Size = new System.Drawing.Size(115, 20);
+            this.CarModel.Size = new System.Drawing.Size(152, 21);
             this.CarModel.TabIndex = 40;
             // 
             // CarID
             // 
-            this.CarID.Location = new System.Drawing.Point(538, 27);
+            this.CarID.Location = new System.Drawing.Point(112, 198);
+            this.CarID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CarID.Name = "CarID";
-            this.CarID.Size = new System.Drawing.Size(115, 20);
+            this.CarID.Size = new System.Drawing.Size(152, 21);
             this.CarID.TabIndex = 39;
             // 
             // labe
             // 
             this.labe.AutoSize = true;
-            this.labe.Location = new System.Drawing.Point(430, 106);
+            this.labe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labe.Location = new System.Drawing.Point(273, 231);
+            this.labe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labe.Name = "labe";
-            this.labe.Size = new System.Drawing.Size(82, 13);
+            this.labe.Size = new System.Drawing.Size(111, 15);
             this.labe.TabIndex = 35;
             this.labe.Text = "Car Registration";
             // 
             // Car_Make
             // 
             this.Car_Make.AutoSize = true;
-            this.Car_Make.Location = new System.Drawing.Point(431, 80);
+            this.Car_Make.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Car_Make.Location = new System.Drawing.Point(273, 198);
+            this.Car_Make.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Car_Make.Name = "Car_Make";
-            this.Car_Make.Size = new System.Drawing.Size(53, 13);
+            this.Car_Make.Size = new System.Drawing.Size(68, 15);
             this.Car_Make.TabIndex = 34;
             this.Car_Make.Text = "Car Make";
             // 
             // Car_Mobel
             // 
             this.Car_Mobel.AutoSize = true;
-            this.Car_Mobel.Location = new System.Drawing.Point(431, 54);
+            this.Car_Mobel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Car_Mobel.Location = new System.Drawing.Point(17, 225);
+            this.Car_Mobel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Car_Mobel.Name = "Car_Mobel";
-            this.Car_Mobel.Size = new System.Drawing.Size(55, 13);
+            this.Car_Mobel.Size = new System.Drawing.Size(73, 15);
             this.Car_Mobel.TabIndex = 33;
             this.Car_Mobel.Text = "Car Model";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(431, 27);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 198);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(45, 15);
             this.label2.TabIndex = 45;
             this.label2.Text = "Car Id";
             // 
             // CarReg
             // 
-            this.CarReg.Location = new System.Drawing.Point(538, 106);
+            this.CarReg.Location = new System.Drawing.Point(391, 228);
+            this.CarReg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CarReg.Name = "CarReg";
-            this.CarReg.Size = new System.Drawing.Size(115, 20);
+            this.CarReg.Size = new System.Drawing.Size(152, 21);
             this.CarReg.TabIndex = 46;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 39);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(404, 131);
+            this.dataGridView1.Size = new System.Drawing.Size(708, 151);
             this.dataGridView1.TabIndex = 55;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Vehicle_Edit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(675, 177);
+            this.ClientSize = new System.Drawing.Size(740, 261);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CarReg);
             this.Controls.Add(this.label2);
@@ -173,8 +190,12 @@ namespace BookingSytem
             this.Controls.Add(this.labe);
             this.Controls.Add(this.Car_Make);
             this.Controls.Add(this.Car_Mobel);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Vehicle_Edit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehicle_Edit";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Vehicle_Edit_FormClosed);
             this.Load += new System.EventHandler(this.Vehicle_Edit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

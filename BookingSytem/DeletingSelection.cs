@@ -45,5 +45,12 @@ namespace BookingSytem
             this.Hide();
 
         }
+
+        private void DeletingSelection_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
     }
 }

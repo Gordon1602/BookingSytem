@@ -204,7 +204,9 @@ namespace BookingSytem
             this.Controls.Add(this.ClientName);
             this.MaximizeBox = false;
             this.Name = "Client_Reg";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client_Reg";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Client_Reg_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

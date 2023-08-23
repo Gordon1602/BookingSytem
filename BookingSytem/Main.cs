@@ -28,13 +28,13 @@ namespace BookingSytem
         }
         private void Main_Load(object sender, EventArgs e)
         {
-          DataView.DataSource = Handler.AllBookings();
+            DataView.DataSource = Handler.AllBookings();
             timer1.Start();
 
             SQL_Conntios SQl = new SQL_Conntios();
             SQl.Conntion();
             SQl.con.Open();
-            string Query = "select * from Booking_Tabel";
+            string Query = "select Client_Name As 'Name',Vehicle_Make As 'Make',Booking_Date As 'Date',Booking_Time as 'Time',Booking_Notes As 'Notes' from Booking_Tabel";
 
             SqlCommand com = new SqlCommand(Query, SQl.con);
             sqladapter = new SqlDataAdapter();
@@ -79,12 +79,31 @@ namespace BookingSytem
         {
             string TodayDate = DateTime.Now.ToString("dd/MM/yyyy");
             DataView DV = new DataView(datatable);
-            DV.RowFilter = string.Format("Booking_Date LIKE '%{0}%'", TodayDate);
+            DV.RowFilter = string.Format("Date LIKE '%{0}%'", TodayDate);
             DataView.DataSource = DV;
         }
         private void timer1_Tick_1(object sender, EventArgs e)
         {        
             label2.Text = DateTime.Now.ToString("dddd dd MMMM yyyy HH:mm");           
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+     
+        }
+
+        private void Loadshedding_btn_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SysSelecting Sys = new SysSelecting();
+            Sys.Show();
+            this.Hide();
         }
     }
 }

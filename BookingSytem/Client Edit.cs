@@ -79,5 +79,17 @@ namespace BookingSytem
                
             }
         }
+
+        private void Client_Edit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
+
+        private void Client_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

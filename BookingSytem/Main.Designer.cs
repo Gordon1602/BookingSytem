@@ -44,6 +44,8 @@ namespace BookingSytem
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Loadshedding_btn = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -133,7 +135,7 @@ namespace BookingSytem
             this.DataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataView.Location = new System.Drawing.Point(138, 70);
             this.DataView.Name = "DataView";
-            this.DataView.Size = new System.Drawing.Size(674, 280);
+            this.DataView.Size = new System.Drawing.Size(674, 344);
             this.DataView.TabIndex = 1;
             // 
             // button5
@@ -156,7 +158,7 @@ namespace BookingSytem
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Kristen ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(0, 324);
+            this.button6.Location = new System.Drawing.Point(0, 388);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(132, 26);
             this.button6.TabIndex = 8;
@@ -196,7 +198,7 @@ namespace BookingSytem
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(554, 25);
+            this.label2.Location = new System.Drawing.Point(511, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 12;
@@ -214,12 +216,42 @@ namespace BookingSytem
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // Loadshedding_btn
+            // 
+            this.Loadshedding_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.Loadshedding_btn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Loadshedding_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Loadshedding_btn.Font = new System.Drawing.Font("Kristen ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Loadshedding_btn.Location = new System.Drawing.Point(0, 356);
+            this.Loadshedding_btn.Name = "Loadshedding_btn";
+            this.Loadshedding_btn.Size = new System.Drawing.Size(132, 26);
+            this.Loadshedding_btn.TabIndex = 13;
+            this.Loadshedding_btn.Text = "Log Out";
+            this.Loadshedding_btn.UseVisualStyleBackColor = false;
+            this.Loadshedding_btn.Click += new System.EventHandler(this.Loadshedding_btn_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.Control;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Kristen ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(0, 324);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(132, 26);
+            this.button9.TabIndex = 14;
+            this.button9.Text = "System User";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(824, 360);
+            this.ClientSize = new System.Drawing.Size(824, 423);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.Loadshedding_btn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -235,7 +267,9 @@ namespace BookingSytem
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking Sytem";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -260,6 +294,8 @@ namespace BookingSytem
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button Loadshedding_btn;
+        private System.Windows.Forms.Button button9;
     }
 }
 
