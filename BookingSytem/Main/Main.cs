@@ -138,16 +138,12 @@ namespace BookingSytem
 
         private void button10_Click(object sender, EventArgs e)
         {
+           
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://developer.sepush.co.za/business/2.0/");
-            HttpResponseMessage reponse = client.GetAsync("/status").Result;
+            client.BaseAddress = new Uri("https://restcountries.com/v3.1/");
+            HttpResponseMessage reponse = client.GetAsync("name/aruba?fullText=true").Result;
 
-            var test = reponse.Content.ReadAsAsync<IEnumerable<LoadSheddingstage>>().Result;
-
-            DataView.DataSource = test;
-     
-
-
+            HttpContent content = reponse.Content;
         }
-    }
+    }   
 }
