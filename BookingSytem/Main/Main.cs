@@ -106,12 +106,10 @@ namespace BookingSytem
         {        
             label2.Text = DateTime.Now.ToString("dddd dd MMMM yyyy HH:mm");           
         }
-
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
         private void Loadshedding_btn_Click(object sender, EventArgs e)
         {
             string MessageBoxTitle = "Logout";
@@ -135,14 +133,11 @@ namespace BookingSytem
             Sys.Show();
             this.Hide();
         }
-
         private void button10_Click(object sender, EventArgs e)
-        {
-           
+        { 
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://restcountries.com/v3.1/");
             HttpResponseMessage reponse = client.GetAsync("name/aruba?fullText=true").Result;
-
             HttpContent content = reponse.Content;
         }
     }   
