@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using BookingSytem.Misc;
+using AppWeather.Model;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Collections.Generic;
@@ -19,6 +21,9 @@ namespace BookingSytem
         datahandler Handler;
         DataTable datatable;
         SqlDataAdapter sqladapter;
+        private WeatherModel.RootObject data;
+        private Loadsheddingmobel.RootObject data1;
+        private string cityName = Properties.Settings.Default.CityName;
         public Main()
         {
             InitializeComponent();
@@ -30,6 +35,7 @@ namespace BookingSytem
              Creg.Show();
             this.Hide();
         }
+   
         private void ShowAll_Click(object sender, EventArgs e)
         {
             DataView.ClearSelection();
@@ -38,6 +44,7 @@ namespace BookingSytem
         private void Main_Load(object sender, EventArgs e)
         {
             DataView.DataSource = Handler.AllBookings();
+
             timer1.Start();
 
             SQL_Conntios SQl = new SQL_Conntios();
@@ -104,7 +111,9 @@ namespace BookingSytem
         }
         private void timer1_Tick_1(object sender, EventArgs e)
         {        
-            label2.Text = DateTime.Now.ToString("dddd dd MMMM yyyy HH:mm");           
+            label2.Text = DateTime.Now.ToString("dddd dd MMMM yyyy HH:mm");
+            prepareWeatherToDisplay(cityName);
+            displayWeather();
         }
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -131,14 +140,34 @@ namespace BookingSytem
         {
             SysSelecting Sys = new SysSelecting();
             Sys.Show();
-            this.Hide();
+           this.Hide();
         }
         private void button10_Click(object sender, EventArgs e)
-        { 
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://restcountries.com/v3.1/");
-            HttpResponseMessage reponse = client.GetAsync("name/aruba?fullText=true").Result;
-            HttpContent content = reponse.Content;
+        {
+
+            new Cityname().Show();
+
+        }
+        public void prepareWeatherToDisplay(string City)
+        {
+            data = ApiConfig.getOneDayWeather(City);
+            data1 = ApiConfig.Loadsheeding();
+        }
+
+        public void displayWeather()
+        {
+         
+            temperatureL.Visible = true;
+            weatherIconBox.Visible = true;
+            temperatureL.Text = cityName + " Temperature "+ data.main.temp.ToString() + " °C " + data.weather[0].description.ToUpper();
+            string imgUrl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+            weatherIconBox.Load(imgUrl);
+
+        }
+
+        private void temperatureL_Click(object sender, EventArgs e)
+        {
+
         }
     }   
 }

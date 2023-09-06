@@ -45,5 +45,17 @@ namespace BookingSytem.Properties {
                 this["Username"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CityName {
+            get {
+                return ((string)(this["CityName"]));
+            }
+            set {
+                this["CityName"] = value;
+            }
+        }
     }
 }

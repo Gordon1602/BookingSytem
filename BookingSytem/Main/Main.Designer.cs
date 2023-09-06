@@ -47,17 +47,21 @@ namespace BookingSytem
             this.Loadshedding_btn = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.weatherIconBox = new System.Windows.Forms.PictureBox();
+            this.temperatureL = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weatherIconBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 9);
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(60, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 36);
+            this.label1.Size = new System.Drawing.Size(251, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Booking System";
             // 
@@ -199,7 +203,7 @@ namespace BookingSytem
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(511, 22);
+            this.label2.Location = new System.Drawing.Point(385, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 12;
@@ -207,7 +211,7 @@ namespace BookingSytem
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BookingSytem.Properties.Resources._21png;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 50);
             this.pictureBox1.TabIndex = 9;
@@ -259,12 +263,47 @@ namespace BookingSytem
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // weatherIconBox
+            // 
+            this.weatherIconBox.Location = new System.Drawing.Point(228, 40);
+            this.weatherIconBox.Name = "weatherIconBox";
+            this.weatherIconBox.Size = new System.Drawing.Size(50, 24);
+            this.weatherIconBox.TabIndex = 16;
+            this.weatherIconBox.TabStop = false;
+            this.weatherIconBox.Visible = false;
+            // 
+            // temperatureL
+            // 
+            this.temperatureL.AutoSize = true;
+            this.temperatureL.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatureL.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.temperatureL.Location = new System.Drawing.Point(284, 40);
+            this.temperatureL.Name = "temperatureL";
+            this.temperatureL.Size = new System.Drawing.Size(112, 21);
+            this.temperatureL.TabIndex = 19;
+            this.temperatureL.Text = "Temperature";
+            this.temperatureL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.temperatureL.Visible = false;
+            this.temperatureL.Click += new System.EventHandler(this.temperatureL_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(66, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "label3";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(824, 458);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.temperatureL);
+            this.Controls.Add(this.weatherIconBox);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.Loadshedding_btn);
@@ -289,6 +328,7 @@ namespace BookingSytem
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weatherIconBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,6 +353,9 @@ namespace BookingSytem
         private System.Windows.Forms.Button Loadshedding_btn;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.PictureBox weatherIconBox;
+        private System.Windows.Forms.Label temperatureL;
+        private System.Windows.Forms.Label label3;
     }
 }
 
